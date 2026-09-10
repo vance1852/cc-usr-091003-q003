@@ -1,0 +1,53 @@
+{
+    "scenario":  "resident-consent-review",
+    "events":  [
+                   {
+                       "event_id":  "003-event-1",
+                       "kind":  "consent_granted",
+                       "occurred_at":  "2026-09-10T08:00:00+08:00",
+                       "received_at":  "2026-09-10T08:01:00+08:00",
+                       "attributes":  {
+                                          "resident_id":  "resident-014",
+                                          "purpose":  "care-reminder",
+                                          "memory_class":  "voice-summary",
+                                          "sequence":  1
+                                      }
+                   },
+                   {
+                       "event_id":  "003-event-2",
+                       "kind":  "memory_recorded",
+                       "occurred_at":  "2026-09-10T08:01:00+08:00",
+                       "received_at":  "2026-09-10T08:02:00+08:00",
+                       "attributes":  {
+                                          "resident_id":  "resident-014",
+                                          "purpose":  "care-reminder",
+                                          "memory_class":  "voice-summary",
+                                          "sequence":  2
+                                      }
+                   },
+                   {
+                       "event_id":  "003-event-3",
+                       "kind":  "consent_revoked",
+                       "occurred_at":  "2026-09-10T08:02:00+08:00",
+                       "received_at":  "2026-09-10T08:03:00+08:00",
+                       "attributes":  {
+                                          "resident_id":  "resident-014",
+                                          "purpose":  "care-reminder",
+                                          "memory_class":  "voice-summary",
+                                          "sequence":  3
+                                      }
+                   },
+                   {
+                       "event_id":  "003-event-4",
+                       "kind":  "deletion_acknowledged",
+                       "occurred_at":  "2026-09-10T08:03:00+08:00",
+                       "received_at":  "2026-09-10T08:04:00+08:00",
+                       "attributes":  {
+                                          "resident_id":  "resident-014",
+                                          "purpose":  "care-reminder",
+                                          "memory_class":  "voice-summary",
+                                          "sequence":  4
+                                      }
+                   }
+               ]
+}
