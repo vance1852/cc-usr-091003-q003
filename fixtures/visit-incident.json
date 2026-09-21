@@ -1,0 +1,664 @@
+{
+  "scenario": "family-visit-replay-incident",
+  "description": "住户拒绝共享的探视谈话被陪护机器人复述；隐私专员调查用导入案例",
+  "events": [
+    {
+      "event_id": "evt-id-0001",
+      "kind": "guardian_designated",
+      "occurred_at": "2026-09-08T09:00:00+08:00",
+      "received_at": "2026-09-08T09:00:00+08:00",
+      "attributes": {
+        "guardian_id": "guardian-old-1",
+        "resident_id": "resident-014",
+        "relation": "daughter"
+      }
+    },
+    {
+      "event_id": "evt-id-0002",
+      "kind": "consent_granted",
+      "occurred_at": "2026-09-10T10:00:00+08:00",
+      "received_at": "2026-09-10T10:00:00+08:00",
+      "attributes": {
+        "grant_id": "g-voice-routine",
+        "resident_id": "resident-014",
+        "subject_id": "resident-014",
+        "subject_type": "resident",
+        "granted_by_role": "resident",
+        "granted_by_id": "resident-014",
+        "guardian_id": null,
+        "memory_class": "voice-summary",
+        "purpose": "care-handover",
+        "contexts": [
+          "routine-care"
+        ],
+        "audience": [
+          "care-staff"
+        ],
+        "retention_seconds": 259200,
+        "valid_from": "2026-09-10T10:00:00+08:00"
+      }
+    },
+    {
+      "event_id": "evt-id-0003",
+      "kind": "consent_granted",
+      "occurred_at": "2026-09-10T10:05:00+08:00",
+      "received_at": "2026-09-10T10:05:00+08:00",
+      "attributes": {
+        "grant_id": "g-med-routine",
+        "resident_id": "resident-014",
+        "subject_id": "resident-014",
+        "subject_type": "resident",
+        "granted_by_role": "resident",
+        "granted_by_id": "resident-014",
+        "guardian_id": null,
+        "memory_class": "medication-reminder",
+        "purpose": "medication-safety",
+        "contexts": [
+          "routine-care"
+        ],
+        "audience": [
+          "care-staff",
+          "resident"
+        ],
+        "retention_seconds": 2592000,
+        "valid_from": "2026-09-10T10:05:00+08:00"
+      }
+    },
+    {
+      "event_id": "evt-id-0004",
+      "kind": "consent_granted",
+      "occurred_at": "2026-09-10T10:10:00+08:00",
+      "received_at": "2026-09-10T10:10:00+08:00",
+      "attributes": {
+        "grant_id": "g-behav-guardian",
+        "resident_id": "resident-014",
+        "subject_id": "resident-014",
+        "subject_type": "resident",
+        "granted_by_role": "guardian",
+        "granted_by_id": "guardian-old-1",
+        "guardian_id": "guardian-old-1",
+        "memory_class": "behavior-preference",
+        "purpose": "personalized-care",
+        "contexts": [
+          "routine-care"
+        ],
+        "audience": [
+          "care-staff"
+        ],
+        "retention_seconds": 7776000,
+        "valid_from": "2026-09-10T10:10:00+08:00"
+      }
+    },
+    {
+      "event_id": "evt-id-0005",
+      "kind": "sharing_declined",
+      "occurred_at": "2026-09-14T19:00:00+08:00",
+      "received_at": "2026-09-14T19:00:00+08:00",
+      "attributes": {
+        "decline_id": "d-visit-voice",
+        "resident_id": "resident-014",
+        "memory_class": "voice-summary",
+        "context": "family-visit",
+        "audience_token": "family:visitor-1"
+      }
+    },
+    {
+      "event_id": "evt-id-0006",
+      "kind": "memory_recorded",
+      "occurred_at": "2026-09-15T08:00:00+08:00",
+      "received_at": "2026-09-15T08:01:00+08:00",
+      "attributes": {
+        "record_id": "rec-med-morning",
+        "resident_id": "resident-014",
+        "memory_class": "medication-reminder",
+        "purpose": "medication-safety",
+        "context": "routine-care",
+        "basis_type": "consent",
+        "basis_id": "g-med-routine",
+        "guardian_id": null,
+        "granted_by": "resident-014",
+        "content_id": "ct-med-morning",
+        "expires_at": "2026-10-15T08:00:00+08:00"
+      }
+    },
+    {
+      "event_id": "evt-id-0007",
+      "kind": "copy_distributed",
+      "occurred_at": "2026-09-15T08:00:00+08:00",
+      "received_at": "2026-09-15T08:01:00+08:00",
+      "attributes": {
+        "copy_id": "copy-src-rec-med-morning",
+        "record_id": "rec-med-morning",
+        "device_id": "core-memory",
+        "is_source": true
+      }
+    },
+    {
+      "event_id": "evt-id-0008",
+      "kind": "copy_distributed",
+      "occurred_at": "2026-09-15T08:00:00+08:00",
+      "received_at": "2026-09-15T08:01:00+08:00",
+      "attributes": {
+        "copy_id": "copy-local-rec-med-morning",
+        "record_id": "rec-med-morning",
+        "device_id": "robot-bedroom-014",
+        "is_source": false
+      }
+    },
+    {
+      "event_id": "evt-id-0009",
+      "kind": "memory_recorded",
+      "occurred_at": "2026-09-15T09:30:00+08:00",
+      "received_at": "2026-09-15T09:31:00+08:00",
+      "attributes": {
+        "record_id": "rec-pref-tea",
+        "resident_id": "resident-014",
+        "memory_class": "behavior-preference",
+        "purpose": "personalized-care",
+        "context": "routine-care",
+        "basis_type": "consent",
+        "basis_id": "g-behav-guardian",
+        "guardian_id": "guardian-old-1",
+        "granted_by": "guardian-old-1",
+        "content_id": "ct-pref-tea",
+        "expires_at": "2026-12-14T09:30:00+08:00"
+      }
+    },
+    {
+      "event_id": "evt-id-0010",
+      "kind": "copy_distributed",
+      "occurred_at": "2026-09-15T09:30:00+08:00",
+      "received_at": "2026-09-15T09:31:00+08:00",
+      "attributes": {
+        "copy_id": "copy-src-rec-pref-tea",
+        "record_id": "rec-pref-tea",
+        "device_id": "core-memory",
+        "is_source": true
+      }
+    },
+    {
+      "event_id": "evt-id-0011",
+      "kind": "copy_distributed",
+      "occurred_at": "2026-09-15T09:30:00+08:00",
+      "received_at": "2026-09-15T09:31:00+08:00",
+      "attributes": {
+        "copy_id": "copy-local-rec-pref-tea",
+        "record_id": "rec-pref-tea",
+        "device_id": "robot-bedroom-014",
+        "is_source": false
+      }
+    },
+    {
+      "event_id": "evt-import-0001",
+      "kind": "memory_recorded",
+      "occurred_at": "2026-09-15T20:30:00+08:00",
+      "received_at": "2026-09-15T20:31:00+08:00",
+      "attributes": {
+        "record_id": "rec-visit-talk",
+        "resident_id": "resident-014",
+        "memory_class": "voice-summary",
+        "purpose": "care-handover",
+        "context": "family-visit",
+        "basis_type": "consent",
+        "basis_id": "g-voice-routine",
+        "guardian_id": null,
+        "granted_by": "resident-014",
+        "content_id": "ct-visit-private-talk",
+        "expires_at": "2026-09-18T20:30:00+08:00"
+      }
+    },
+    {
+      "event_id": "evt-import-0002",
+      "kind": "copy_distributed",
+      "occurred_at": "2026-09-15T20:32:00+08:00",
+      "received_at": "2026-09-15T20:33:00+08:00",
+      "attributes": {
+        "copy_id": "copy-src-rec-visit-talk",
+        "record_id": "rec-visit-talk",
+        "device_id": "core-memory",
+        "is_source": true
+      }
+    },
+    {
+      "event_id": "evt-import-0003",
+      "kind": "copy_distributed",
+      "occurred_at": "2026-09-15T20:32:00+08:00",
+      "received_at": "2026-09-15T20:33:00+08:00",
+      "attributes": {
+        "copy_id": "copy-local-rec-visit-talk",
+        "record_id": "rec-visit-talk",
+        "device_id": "robot-bedroom-014",
+        "is_source": false
+      }
+    },
+    {
+      "event_id": "evt-import-0004",
+      "kind": "copy_distributed",
+      "occurred_at": "2026-09-15T20:32:00+08:00",
+      "received_at": "2026-09-15T20:33:00+08:00",
+      "attributes": {
+        "copy_id": "copy-living-rec-visit-talk",
+        "record_id": "rec-visit-talk",
+        "device_id": "robot-living-014",
+        "is_source": false
+      }
+    },
+    {
+      "event_id": "evt-import-0005",
+      "kind": "access_logged",
+      "occurred_at": "2026-09-15T20:35:00+08:00",
+      "received_at": "2026-09-15T20:36:00+08:00",
+      "attributes": {
+        "access_id": "acc-import-replay",
+        "record_id": "rec-visit-talk",
+        "copy_id": "copy-living-rec-visit-talk",
+        "requester_role": "family",
+        "requester_id": "visitor-1",
+        "context": "family-visit",
+        "purpose": "care-handover",
+        "allowed": true,
+        "reason": null,
+        "basis_type": "consent",
+        "basis_id": "g-voice-routine",
+        "breach": true,
+        "resident_id": "resident-014"
+      }
+    },
+    {
+      "event_id": "evt-id-0012",
+      "kind": "memory_suspended",
+      "occurred_at": "2026-09-16T08:40:00+08:00",
+      "received_at": "2026-09-16T08:40:00+08:00",
+      "attributes": {
+        "by_id": "privacy-officer-1",
+        "reason": "家属探视时机器人复述住户拒绝共享的私密谈话"
+      }
+    },
+    {
+      "event_id": "evt-id-0013",
+      "kind": "access_logged",
+      "occurred_at": "2026-09-16T09:30:00+08:00",
+      "received_at": "2026-09-16T09:30:00+08:00",
+      "attributes": {
+        "access_id": "acc-blocked-by-suspension",
+        "record_id": "rec-visit-talk",
+        "copy_id": null,
+        "requester_role": "care-staff",
+        "requester_id": "nurse-2",
+        "context": "routine-care",
+        "purpose": "care-handover",
+        "allowed": false,
+        "reason": "suspended",
+        "basis_type": "consent",
+        "basis_id": "g-voice-routine",
+        "breach": true,
+        "resident_id": "resident-014"
+      }
+    },
+    {
+      "event_id": "evt-id-0014",
+      "kind": "consent_revoked",
+      "occurred_at": "2026-09-16T10:00:00+08:00",
+      "received_at": "2026-09-16T10:00:00+08:00",
+      "attributes": {
+        "resident_id": "resident-014",
+        "memory_class": "voice-summary",
+        "purpose": "care-handover",
+        "revoked_by": "resident-014",
+        "grant_id": "g-voice-routine"
+      }
+    },
+    {
+      "event_id": "evt-id-0015",
+      "kind": "content_shredded",
+      "occurred_at": "2026-09-16T10:00:00+08:00",
+      "received_at": "2026-09-16T10:00:00+08:00",
+      "attributes": {
+        "record_id": "rec-visit-talk",
+        "reason": "revocation",
+        "trigger_event_id": "evt-id-0014",
+        "copy_ids": [
+          "copy-src-rec-visit-talk"
+        ]
+      }
+    },
+    {
+      "event_id": "evt-id-0017",
+      "kind": "deletion_task_created",
+      "occurred_at": "2026-09-16T10:00:00+08:00",
+      "received_at": "2026-09-16T10:00:00+08:00",
+      "attributes": {
+        "task_id": "task-id-0016",
+        "copy_id": "copy-local-rec-visit-talk",
+        "record_id": "rec-visit-talk",
+        "device_id": "robot-bedroom-014",
+        "reason": "revocation",
+        "due_at": "2026-09-17T10:00:00+08:00"
+      }
+    },
+    {
+      "event_id": "evt-id-0019",
+      "kind": "deletion_task_created",
+      "occurred_at": "2026-09-16T10:00:00+08:00",
+      "received_at": "2026-09-16T10:00:00+08:00",
+      "attributes": {
+        "task_id": "task-id-0018",
+        "copy_id": "copy-living-rec-visit-talk",
+        "record_id": "rec-visit-talk",
+        "device_id": "robot-living-014",
+        "reason": "revocation",
+        "due_at": "2026-09-17T10:00:00+08:00"
+      }
+    },
+    {
+      "event_id": "evt-id-0020",
+      "kind": "consent_revoked",
+      "occurred_at": "2026-09-16T11:00:00+08:00",
+      "received_at": "2026-09-16T11:00:00+08:00",
+      "attributes": {
+        "resident_id": "resident-014",
+        "memory_class": "medication-reminder",
+        "purpose": "medication-safety",
+        "revoked_by": "resident-014",
+        "grant_id": "g-med-routine"
+      }
+    },
+    {
+      "event_id": "evt-id-0021",
+      "kind": "content_shredded",
+      "occurred_at": "2026-09-16T11:00:00+08:00",
+      "received_at": "2026-09-16T11:00:00+08:00",
+      "attributes": {
+        "record_id": "rec-med-morning",
+        "reason": "revocation",
+        "trigger_event_id": "evt-id-0020",
+        "copy_ids": [
+          "copy-src-rec-med-morning"
+        ]
+      }
+    },
+    {
+      "event_id": "evt-id-0023",
+      "kind": "deletion_task_created",
+      "occurred_at": "2026-09-16T11:00:00+08:00",
+      "received_at": "2026-09-16T11:00:00+08:00",
+      "attributes": {
+        "task_id": "task-id-0022",
+        "copy_id": "copy-local-rec-med-morning",
+        "record_id": "rec-med-morning",
+        "device_id": "robot-bedroom-014",
+        "reason": "revocation",
+        "due_at": "2026-09-17T11:00:00+08:00"
+      }
+    },
+    {
+      "event_id": "evt-id-0024",
+      "kind": "deletion_acknowledged",
+      "occurred_at": "2026-09-17T08:00:00+08:00",
+      "received_at": "2026-09-17T08:00:00+08:00",
+      "attributes": {
+        "task_id": "task-id-0018",
+        "copy_id": "copy-living-rec-visit-talk"
+      }
+    },
+    {
+      "event_id": "evt-id-0025",
+      "kind": "emergency_started",
+      "occurred_at": "2026-09-17T02:00:00+08:00",
+      "received_at": "2026-09-17T02:00:00+08:00",
+      "attributes": {
+        "emergency_id": "em-chestpain-1",
+        "resident_id": "resident-014"
+      }
+    },
+    {
+      "event_id": "evt-id-0026",
+      "kind": "memory_recorded",
+      "occurred_at": "2026-09-17T02:10:00+08:00",
+      "received_at": "2026-09-17T02:11:00+08:00",
+      "attributes": {
+        "record_id": "rec-emergency-note",
+        "resident_id": "resident-014",
+        "memory_class": "voice-summary",
+        "purpose": "life-protection",
+        "context": "emergency",
+        "basis_type": "emergency",
+        "basis_id": "em-chestpain-1",
+        "guardian_id": null,
+        "granted_by": null,
+        "content_id": "ct-emergency-note",
+        "expires_at": "2026-09-17T14:00:00+08:00"
+      }
+    },
+    {
+      "event_id": "evt-id-0027",
+      "kind": "copy_distributed",
+      "occurred_at": "2026-09-17T02:10:00+08:00",
+      "received_at": "2026-09-17T02:11:00+08:00",
+      "attributes": {
+        "copy_id": "copy-src-rec-emergency-note",
+        "record_id": "rec-emergency-note",
+        "device_id": "core-memory",
+        "is_source": true
+      }
+    },
+    {
+      "event_id": "evt-id-0028",
+      "kind": "copy_distributed",
+      "occurred_at": "2026-09-17T02:10:00+08:00",
+      "received_at": "2026-09-17T02:11:00+08:00",
+      "attributes": {
+        "copy_id": "copy-local-rec-emergency-note",
+        "record_id": "rec-emergency-note",
+        "device_id": "robot-ward-014",
+        "is_source": false
+      }
+    },
+    {
+      "event_id": "evt-id-0029",
+      "kind": "access_logged",
+      "occurred_at": "2026-09-17T02:30:00+08:00",
+      "received_at": "2026-09-17T02:30:00+08:00",
+      "attributes": {
+        "access_id": "acc-emt-allowed",
+        "record_id": "rec-emergency-note",
+        "copy_id": null,
+        "requester_role": "emergency-responder",
+        "requester_id": "emt-9",
+        "context": "emergency",
+        "purpose": "life-protection",
+        "allowed": true,
+        "reason": null,
+        "basis_type": "emergency",
+        "basis_id": "em-chestpain-1",
+        "breach": false,
+        "resident_id": "resident-014"
+      }
+    },
+    {
+      "event_id": "evt-id-0030",
+      "kind": "access_logged",
+      "occurred_at": "2026-09-17T02:40:00+08:00",
+      "received_at": "2026-09-17T02:40:00+08:00",
+      "attributes": {
+        "access_id": "acc-family-emergency-denied",
+        "record_id": "rec-emergency-note",
+        "copy_id": null,
+        "requester_role": "family",
+        "requester_id": "visitor-1",
+        "context": "emergency",
+        "purpose": "life-protection",
+        "allowed": false,
+        "reason": "emergency-audience",
+        "basis_type": "emergency",
+        "basis_id": "em-chestpain-1",
+        "breach": true,
+        "resident_id": "resident-014"
+      }
+    },
+    {
+      "event_id": "evt-id-0031",
+      "kind": "emergency_ended",
+      "occurred_at": "2026-09-17T03:00:00+08:00",
+      "received_at": "2026-09-17T03:00:00+08:00",
+      "attributes": {
+        "emergency_id": "em-chestpain-1"
+      }
+    },
+    {
+      "event_id": "evt-id-0032",
+      "kind": "access_logged",
+      "occurred_at": "2026-09-20T10:00:00+08:00",
+      "received_at": "2026-09-20T10:00:00+08:00",
+      "attributes": {
+        "access_id": "acc-post-revoke-replay",
+        "record_id": "rec-visit-talk",
+        "copy_id": null,
+        "requester_role": "family",
+        "requester_id": "visitor-1",
+        "context": "family-visit",
+        "purpose": "care-handover",
+        "allowed": false,
+        "reason": "revoked",
+        "basis_type": "consent",
+        "basis_id": "g-voice-routine",
+        "breach": true,
+        "resident_id": "resident-014"
+      }
+    },
+    {
+      "event_id": "evt-id-0033",
+      "kind": "content_shredded",
+      "occurred_at": "2026-09-18T09:00:00+08:00",
+      "received_at": "2026-09-18T09:00:00+08:00",
+      "attributes": {
+        "record_id": "rec-emergency-note",
+        "reason": "emergency-end",
+        "trigger_event_id": null,
+        "copy_ids": [
+          "copy-src-rec-emergency-note"
+        ]
+      }
+    },
+    {
+      "event_id": "evt-id-0035",
+      "kind": "deletion_task_created",
+      "occurred_at": "2026-09-18T09:00:00+08:00",
+      "received_at": "2026-09-18T09:00:00+08:00",
+      "attributes": {
+        "task_id": "task-id-0034",
+        "copy_id": "copy-local-rec-emergency-note",
+        "record_id": "rec-emergency-note",
+        "device_id": "robot-ward-014",
+        "reason": "emergency-end",
+        "due_at": "2026-09-19T09:00:00+08:00"
+      }
+    },
+    {
+      "event_id": "evt-id-0036",
+      "kind": "guardian_revoked",
+      "occurred_at": "2026-09-18T12:00:00+08:00",
+      "received_at": "2026-09-18T12:00:00+08:00",
+      "attributes": {
+        "guardian_id": "guardian-old-1"
+      }
+    },
+    {
+      "event_id": "evt-id-0037",
+      "kind": "guardian_designated",
+      "occurred_at": "2026-09-18T12:30:00+08:00",
+      "received_at": "2026-09-18T12:30:00+08:00",
+      "attributes": {
+        "guardian_id": "guardian-new-2",
+        "resident_id": "resident-014",
+        "relation": "son"
+      }
+    },
+    {
+      "event_id": "evt-id-0038",
+      "kind": "memory_recorded",
+      "occurred_at": "2026-09-15T11:30:00+08:00",
+      "received_at": "2026-09-18T15:00:00+08:00",
+      "attributes": {
+        "record_id": "rec-med-offline",
+        "resident_id": "resident-014",
+        "memory_class": "medication-reminder",
+        "purpose": "medication-safety",
+        "context": "routine-care",
+        "basis_type": "consent",
+        "basis_id": "g-med-routine",
+        "guardian_id": null,
+        "granted_by": "resident-014",
+        "content_id": "ct-med-offline-dose",
+        "expires_at": "2026-10-15T11:30:00+08:00"
+      }
+    },
+    {
+      "event_id": "evt-id-0039",
+      "kind": "copy_distributed",
+      "occurred_at": "2026-09-15T11:30:00+08:00",
+      "received_at": "2026-09-18T15:00:00+08:00",
+      "attributes": {
+        "copy_id": "copy-src-rec-med-offline",
+        "record_id": "rec-med-offline",
+        "device_id": "core-memory",
+        "is_source": true
+      }
+    },
+    {
+      "event_id": "evt-id-0040",
+      "kind": "copy_distributed",
+      "occurred_at": "2026-09-15T11:30:00+08:00",
+      "received_at": "2026-09-18T15:00:00+08:00",
+      "attributes": {
+        "copy_id": "copy-local-rec-med-offline",
+        "record_id": "rec-med-offline",
+        "device_id": "robot-portable-014",
+        "is_source": false
+      }
+    },
+    {
+      "event_id": "evt-id-0041",
+      "kind": "content_shredded",
+      "occurred_at": "2026-09-18T15:00:00+08:00",
+      "received_at": "2026-09-18T15:00:00+08:00",
+      "attributes": {
+        "record_id": "rec-med-offline",
+        "reason": "revocation",
+        "trigger_event_id": "evt-id-0038",
+        "copy_ids": [
+          "copy-src-rec-med-offline"
+        ]
+      }
+    },
+    {
+      "event_id": "evt-id-0043",
+      "kind": "deletion_task_created",
+      "occurred_at": "2026-09-18T15:00:00+08:00",
+      "received_at": "2026-09-18T15:00:00+08:00",
+      "attributes": {
+        "task_id": "task-id-0042",
+        "copy_id": "copy-local-rec-med-offline",
+        "record_id": "rec-med-offline",
+        "device_id": "robot-portable-014",
+        "reason": "revocation",
+        "due_at": "2026-09-19T15:00:00+08:00"
+      }
+    },
+    {
+      "event_id": "evt-id-0045",
+      "kind": "recording_refused",
+      "occurred_at": "2026-09-21T09:00:00+08:00",
+      "received_at": "2026-09-21T09:01:00+08:00",
+      "attributes": {
+        "resident_id": "resident-014",
+        "memory_class": "voice-summary",
+        "purpose": "care-handover",
+        "context": "routine-care",
+        "content_id": "ct-while-suspended",
+        "collector_id": "nurse-2",
+        "reason": "suspended"
+      }
+    }
+  ]
+}
