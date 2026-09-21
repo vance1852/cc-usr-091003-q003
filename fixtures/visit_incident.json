@@ -1,0 +1,287 @@
+{
+    "scenario": "family-visit-private-talk-incident",
+    "events": [
+        {
+            "event_id": "evt-registered",
+            "kind": "resident_registered",
+            "occurred_at": "2026-09-01T09:00:00+08:00",
+            "received_at": "2026-09-01T09:00:00+08:00",
+            "attributes": {
+                "resident_id": "resident-014",
+                "sequence": 0
+            }
+        },
+        {
+            "event_id": "evt-guard-daughter",
+            "kind": "guardianship_granted",
+            "occurred_at": "2026-09-01T09:05:00+08:00",
+            "received_at": "2026-09-01T09:05:00+08:00",
+            "attributes": {
+                "resident_id": "resident-014",
+                "guardian_id": "guardian-009",
+                "relation": "daughter"
+            }
+        },
+        {
+            "event_id": "evt-grant-voice",
+            "kind": "consent_granted",
+            "occurred_at": "2026-09-13T09:00:00+08:00",
+            "received_at": "2026-09-13T09:00:00+08:00",
+            "attributes": {
+                "resident_id": "resident-014",
+                "memory_class": "voice-summary",
+                "purpose": "care-context",
+                "audiences": ["care-staff", "resident-014"],
+                "scenes": ["ordinary-care"],
+                "retention_days": 7,
+                "granted_by": "resident-014"
+            }
+        },
+        {
+            "event_id": "evt-grant-med",
+            "kind": "consent_granted",
+            "occurred_at": "2026-09-13T09:05:00+08:00",
+            "received_at": "2026-09-13T09:05:00+08:00",
+            "attributes": {
+                "resident_id": "resident-014",
+                "memory_class": "medication-reminder",
+                "granted_by": "guardian-009",
+                "grantor_role": "guardian"
+            }
+        },
+        {
+            "event_id": "evt-grant-pref",
+            "kind": "consent_granted",
+            "occurred_at": "2026-09-13T09:10:00+08:00",
+            "received_at": "2026-09-13T09:10:00+08:00",
+            "attributes": {
+                "resident_id": "resident-014",
+                "memory_class": "behavior-preference",
+                "granted_by": "resident-014"
+            }
+        },
+        {
+            "event_id": "evt-talk-recorded",
+            "kind": "memory_recorded",
+            "occurred_at": "2026-09-14T20:00:00+08:00",
+            "received_at": "2026-09-14T20:00:30+08:00",
+            "attributes": {
+                "record_id": "rec-voice-0001",
+                "resident_id": "resident-014",
+                "memory_class": "voice-summary",
+                "scene": "ordinary-care",
+                "summary": "与隔壁住户谈论不愿让女儿知道的病情和家庭安排",
+                "other_residents": ["resident-022"]
+            }
+        },
+        {
+            "event_id": "evt-refuse-family-share",
+            "kind": "sharing_refused",
+            "occurred_at": "2026-09-14T20:30:00+08:00",
+            "received_at": "2026-09-14T20:30:00+08:00",
+            "attributes": {
+                "resident_id": "resident-014",
+                "memory_class": "voice-summary",
+                "scene": "family-visit",
+                "refused_by": "resident-014"
+            }
+        },
+        {
+            "event_id": "evt-copy-bedside",
+            "kind": "copy_distributed",
+            "occurred_at": "2026-09-15T11:00:00+08:00",
+            "received_at": "2026-09-15T11:00:05+08:00",
+            "attributes": {
+                "record_id": "rec-voice-0001",
+                "device_id": "bedside-robot-07"
+            }
+        },
+        {
+            "event_id": "evt-copy-visitconsole",
+            "kind": "copy_distributed",
+            "occurred_at": "2026-09-15T11:02:00+08:00",
+            "received_at": "2026-09-15T11:02:05+08:00",
+            "attributes": {
+                "record_id": "rec-voice-0001",
+                "device_id": "visit-console-03"
+            }
+        },
+        {
+            "event_id": "evt-emergency-open",
+            "kind": "emergency_declared",
+            "occurred_at": "2026-09-17T02:00:00+08:00",
+            "received_at": "2026-09-17T02:00:00+08:00",
+            "attributes": {
+                "resident_id": "resident-014",
+                "declared_by": "night-nurse-02"
+            }
+        },
+        {
+            "event_id": "evt-emergency-record",
+            "kind": "memory_recorded",
+            "occurred_at": "2026-09-17T02:05:00+08:00",
+            "received_at": "2026-09-17T02:05:10+08:00",
+            "attributes": {
+                "record_id": "rec-emg-0001",
+                "resident_id": "resident-014",
+                "memory_class": "voice-summary",
+                "scene": "emergency",
+                "summary": "夜间跌倒，呼吸急促，急救人员需要的伤情口述"
+            }
+        },
+        {
+            "event_id": "evt-emergency-copy",
+            "kind": "copy_distributed",
+            "occurred_at": "2026-09-17T02:10:00+08:00",
+            "received_at": "2026-09-17T02:10:00+08:00",
+            "attributes": {
+                "record_id": "rec-emg-0001",
+                "device_id": "responder-tablet-05"
+            }
+        },
+        {
+            "event_id": "evt-emergency-access",
+            "kind": "memory_accessed",
+            "occurred_at": "2026-09-17T02:15:00+08:00",
+            "received_at": "2026-09-17T02:15:00+08:00",
+            "attributes": {
+                "record_id": "rec-emg-0001",
+                "actor": "responder-emt-01",
+                "audience": "emergency-responder",
+                "scene": "emergency",
+                "at": "2026-09-17T02:15:00+08:00",
+                "allowed_decision": true,
+                "basis": "emergency-exemption:evt-emergency-open"
+            }
+        },
+        {
+            "event_id": "evt-emergency-clear",
+            "kind": "emergency_cleared",
+            "occurred_at": "2026-09-17T03:00:00+08:00",
+            "received_at": "2026-09-17T03:00:00+08:00",
+            "attributes": {
+                "resident_id": "resident-014"
+            }
+        },
+        {
+            "event_id": "evt-emg-ack-core",
+            "kind": "deletion_acknowledged",
+            "occurred_at": "2026-09-17T03:20:00+08:00",
+            "received_at": "2026-09-17T03:20:00+08:00",
+            "attributes": {
+                "record_id": "rec-emg-0001",
+                "device_id": "core-store"
+            }
+        },
+        {
+            "event_id": "evt-emg-ack-tablet",
+            "kind": "deletion_acknowledged",
+            "occurred_at": "2026-09-17T03:25:00+08:00",
+            "received_at": "2026-09-17T03:25:00+08:00",
+            "attributes": {
+                "record_id": "rec-emg-0001",
+                "device_id": "responder-tablet-05"
+            }
+        },
+        {
+            "event_id": "evt-voice-offline-recorded",
+            "kind": "memory_recorded",
+            "occurred_at": "2026-09-17T09:00:00+08:00",
+            "received_at": "2026-09-19T12:30:00+08:00",
+            "attributes": {
+                "record_id": "rec-voice-0002",
+                "resident_id": "resident-014",
+                "memory_class": "voice-summary",
+                "scene": "ordinary-care",
+                "summary": "离线机器人在撤回前采集的晨间对话",
+                "captured_by": "offline-robot-11"
+            }
+        },
+        {
+            "event_id": "evt-voice-offline-duplicate-upload",
+            "kind": "memory_recorded",
+            "occurred_at": "2026-09-17T09:00:00+08:00",
+            "received_at": "2026-09-19T13:00:00+08:00",
+            "attributes": {
+                "record_id": "rec-voice-0002",
+                "resident_id": "resident-014",
+                "memory_class": "voice-summary",
+                "scene": "ordinary-care",
+                "summary": "离线机器人在撤回前采集的晨间对话（重复上传）",
+                "captured_by": "offline-robot-11",
+                "upload_attempt": 2
+            }
+        },
+        {
+            "event_id": "evt-med-recorded",
+            "kind": "memory_recorded",
+            "occurred_at": "2026-09-18T08:00:00+08:00",
+            "received_at": "2026-09-18T08:00:10+08:00",
+            "attributes": {
+                "record_id": "rec-med-0001",
+                "resident_id": "resident-014",
+                "memory_class": "medication-reminder",
+                "scene": "ordinary-care",
+                "summary": "降压药改为早餐后服用"
+            }
+        },
+        {
+            "event_id": "evt-family-visit-replay",
+            "kind": "memory_accessed",
+            "occurred_at": "2026-09-18T15:00:00+08:00",
+            "received_at": "2026-09-18T15:00:05+08:00",
+            "attributes": {
+                "record_id": "rec-voice-0001",
+                "actor": "bedside-robot-07",
+                "audience": "family",
+                "scene": "family-visit",
+                "at": "2026-09-18T15:00:00+08:00",
+                "allowed_decision": false,
+                "reason": "resident-refused"
+            }
+        },
+        {
+            "event_id": "evt-revoke-voice",
+            "kind": "consent_revoked",
+            "occurred_at": "2026-09-18T15:30:00+08:00",
+            "received_at": "2026-09-18T15:30:00+08:00",
+            "attributes": {
+                "resident_id": "resident-014",
+                "memory_class": "voice-summary",
+                "revoked_by": "resident-014",
+                "witness": "privacy-officer-01"
+            }
+        },
+        {
+            "event_id": "evt-core-ack-0001",
+            "kind": "deletion_acknowledged",
+            "occurred_at": "2026-09-19T10:00:00+08:00",
+            "received_at": "2026-09-19T10:00:00+08:00",
+            "attributes": {
+                "record_id": "rec-voice-0001",
+                "device_id": "core-store"
+            }
+        },
+        {
+            "event_id": "evt-guard-daughter-revoked",
+            "kind": "guardianship_revoked",
+            "occurred_at": "2026-09-19T14:00:00+08:00",
+            "received_at": "2026-09-19T14:00:00+08:00",
+            "attributes": {
+                "resident_id": "resident-014",
+                "guardian_id": "guardian-009"
+            }
+        },
+        {
+            "event_id": "evt-guard-nephew",
+            "kind": "guardianship_granted",
+            "occurred_at": "2026-09-19T14:05:00+08:00",
+            "received_at": "2026-09-19T14:05:00+08:00",
+            "attributes": {
+                "resident_id": "resident-014",
+                "guardian_id": "guardian-010",
+                "relation": "nephew"
+            }
+        }
+    ]
+}
